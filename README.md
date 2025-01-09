@@ -68,7 +68,7 @@ regex = "1.11.1"
 
 Installing DuckDB
 
-To install DuckDB on Fedora, simply copy the duckdb executable file to the /usr/bin directory
+To install DuckDB on Fedora, simply copy the duckdb executable file to the **/usr/bin** directory
 
 Installing Python
 
