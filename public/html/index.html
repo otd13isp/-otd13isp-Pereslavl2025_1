@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+<script>
+// ---------------------------------------------------------
+var MySearch = function(search) {
+// создание нового XMLHttpRequest, который даёт возможность
+// делать HTTP-запросы к серверу без перезагрузки страницы
+var xhr = new XMLHttpRequest();
+var req = 'search=' + encodeURIComponent(search);
+// HTTP-запрос запускается с помощью метода open()
+// используется метод POST и
+// URL-адрес, куда отправляется запрос
+xhr.open("POST", "/search");
+// метод setRequestHeader() определяет заголовки, которые будут отправляться
+// вместе с запросом
+xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+// устанавливается обработчик событий загрузки, который будет вызываться
+// после завершения HTTP-запроса
+xhr.onload = function(e)
+{
+  // readyState: хранит состояния запроса
+  // status: содержит код ответа HTTP, который пришел от сервера
+  if(this.readyState == 4 && this.status == 200) { 
+  var sAux = this.response;  
+  console.log(sAux);
+  document.getElementById('result').innerHTML = sAux;
+  return false;
+  } else {
+  alert("Err!");
+  }
+return false;  
+};
+// отправка запроса
+xhr.send(req);
+return false;
+};
+</script>
+</head>
+<body>
+<input type="text" id="searchstr" name="searchstr">&nbsp;<button
+  onClick="MySearch(searchstr.value); return false;">Поиск</button><br><br>
+<div id="result"></div>
+</body>
+</html>
