@@ -11,8 +11,7 @@ use std::thread;
 //
 use duckdb::{params, Connection, Result};
 
-// static MY_PATH: &str = "/home/user1/Документы/Sergey/Rust/bookrust2/public/searchdb.duckdb";
-static MY_PATH: &str = "/home/user1/Документы/Sergey/rust/pereslavl2025/1/public/searchdb.duckdb";
+static MY_PATH: &str = "/home/user1/Документы/rust/pereslavl2025/1/public/searchdb.duckdb";
 
 /* ****************************************************** */
 // запуск сервера
