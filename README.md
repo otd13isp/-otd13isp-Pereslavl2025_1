@@ -34,7 +34,7 @@ Run the commands to install openssl:
 \# dnf install pkg-config perl-FindBin openssl-devel
 
 
-To install C++ for compiling packages Rust and DuckDB
+To install C++ for compiling packages Rust and DuckDB:
 
 \# dnf install gcc-c++
 
