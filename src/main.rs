@@ -1,16 +1,3 @@
-// https://duckdb.org/docs/api/rust.html
-// https://docs.rs/duckdb/latest/duckdb/struct.Connection.html
-// https://docs.rs/mysql/latest/mysql/
-
-// https://github.com/duckdb/duckdb-rs
-// This is probably the simplest solution to any build problems. You can enable this by adding the following in your Cargo.toml file:
-// cargo add duckdb --features bundled
-
-// создать базу данных
-// .open searchdb.duckdb
-
-
-
 // Actix Web — веб-фреймворк для Rust
 use actix_web::{get, post, web, App, HttpResponse, HttpServer, Responder};
 // обеспечивает поиск в строках совпадений с регулярным выражением
