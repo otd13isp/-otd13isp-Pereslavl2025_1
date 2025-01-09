@@ -66,11 +66,11 @@ serde = { version = "1.0.217", features = ["derive"] }
 
 regex = "1.11.1"
 
-Installing DuckDB
+Installing DuckDB:
 
 To install DuckDB on Fedora, simply copy the duckdb executable file to the **/usr/bin** directory
 
-Installing Python
+Installing Python:
 
 \# dnf install python
 
