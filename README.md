@@ -90,7 +90,11 @@ Create a **public** subdirectory in the project directory. Create a **html** sub
 
 ## Usage
 To start the project server, run the command
-\$ cargo run in the project directory
+
+\$ cargo run
+
+in the project directory
+
 Type http://localhost:8080 to request to the server. Enter the search data in the form of sorted lemmas in the search line.
 
 ## License
