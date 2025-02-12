@@ -4,43 +4,58 @@
   <meta charset="utf-8">
 <script>
 // ---------------------------------------------------------
-var MySearch = function(search) {
-// создание нового XMLHttpRequest, который даёт возможность
-// делать HTTP-запросы к серверу без перезагрузки страницы
-var xhr = new XMLHttpRequest();
-var req = 'search=' + encodeURIComponent(search);
-// HTTP-запрос запускается с помощью метода open()
-// используется метод POST и
-// URL-адрес, куда отправляется запрос
-xhr.open("POST", "/search");
-// метод setRequestHeader() определяет заголовки, которые будут отправляться
-// вместе с запросом
-xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-// устанавливается обработчик событий загрузки, который будет вызываться
-// после завершения HTTP-запроса
-xhr.onload = function(e)
-{
-  // readyState: хранит состояния запроса
-  // status: содержит код ответа HTTP, который пришел от сервера
-  if(this.readyState == 4 && this.status == 200) { 
-  var sAux = this.response;  
-  console.log(sAux);
-  document.getElementById('result').innerHTML = sAux;
-  return false;
-  } else {
-  alert("Err!");
-  }
-return false;  
-};
-// отправка запроса
-xhr.send(req);
-return false;
-};
+     async function my_search(search_string) {
+      let lemmas = await query_func_lemma(search_string);
+      console.log("lemmas="+lemmas);
+      let result = await query_func_result(lemmas);
+      console.log("result="+result);
+      document.getElementById("idsearch").innerHTML = result;
+      return false;
+      }
+// ---------------------------------------------------------
+      async function query_func_lemma(in_text) {
+      var formData = new FormData();
+      formData.append('text', in_text);
+        try {
+        const response = await fetch("http://localhost:8000",
+        {
+        method: 'POST',
+        body: formData
+        });        
+        const myres = await response.text();        
+        return myres;
+      } catch (e) {
+      	alert("Err! "+e);
+      return false;
+        }
+      return false;
+      }
+// ---------------------------------------------------------
+      async function query_func_result(in_text) {
+        try {
+        const response = await fetch("/search",
+        {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
+        body: new URLSearchParams({ 'search': in_text })
+        });
+        const myres = await response.text();
+        return myres;
+      } catch (e) {
+      	alert("Err! "+e);
+      return false;
+        }
+      return false;
+      }
 </script>
 </head>
 <body>
-<input type="text" id="searchstr" name="searchstr">&nbsp;<button
-  onClick="MySearch(searchstr.value); return false;">Поиск</button><br><br>
-<div id="result"></div>
+      <form method="POST" enctype="multipart/form-data">
+         <label for="lemma">Введите текст:</label><br>
+         <input type="text" id="lemma" name="lemma" value="">
+         <button onclick="my_search(lemma.value); return false;">Поиск</button>
+      </form>
+      <div id="idsearch"></div>
 </body>
 </html>
+
