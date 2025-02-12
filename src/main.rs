@@ -11,7 +11,7 @@ use std::thread;
 //
 use duckdb::{params, Connection, Result};
 
-static MY_PATH: &str = "/home/user1/Документы/rust/pereslavl2025/1/public/searchdb.duckdb";
+static MY_PATH: &str = "/.../public/searchdb.duckdb";
 
 /* ****************************************************** */
 // запуск сервера
@@ -73,6 +73,7 @@ struct FormData {
 #[post("/search")]
 async fn search(form: web::Form<FormData>) -> impl Responder {
     let search = format!("{}", form.search);
+    println!("search: {}", search);
     let search = search.to_lowercase();
     // предполагаем, что для строки поиска была проведена лемматизация
     // удаляем пробелы справа и слева строки
