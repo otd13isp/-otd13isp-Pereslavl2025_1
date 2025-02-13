@@ -93,9 +93,13 @@ You need to specify the path to the DuckDB database in the **src/main.rs** file.
 Create a **public** subdirectory in the project directory. Create a **html** subdirectory. The **html** subdirectory contains the **index.html** files and file DuckDB data base **searchdb.duckdb**.  File  **searchdb.duckdb**  will be used for searching
 
 ## Usage
-To start the project server, run the command
+To start the Rust server, run the command
 
 \$ cargo run
+
+To start the Python server, run the command
+
+\$ python lemma.py
 
 in the project directory
 
