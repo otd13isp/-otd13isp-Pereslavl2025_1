@@ -82,7 +82,7 @@ regex = "1.11.1"
 
 \# pip install pymystem3
 
-Загрузить пакет для Flask
+Загрузить пакеты для Flask
 
 \# pip install flask
 
