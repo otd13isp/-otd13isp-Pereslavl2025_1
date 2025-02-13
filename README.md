@@ -1,4 +1,4 @@
-# Data selection and implementation of an aggregated query of sensitive data using DuckDB database and Rust language
+# Implementation of aggregated data queries based on information security requirements
 ## Free Software (free software)
 
 The application is free software.
