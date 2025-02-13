@@ -48,7 +48,7 @@ To install dependencies correctly, you need to edit the Cargo.toml file:
 
 [package]
 
-name = "bookrust2"
+name = "v_ikf"
 
 version = "0.1.0"
 
