@@ -82,6 +82,8 @@ Download text lemmatization package:
 
 \# pip install pymystem3
 
+Download Flask package:
+
 \# pip install flask
 
 \# pip install flask_cors
