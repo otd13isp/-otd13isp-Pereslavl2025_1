@@ -81,7 +81,9 @@ Installation pip:
 Download text lemmatization package:
 
 \# pip install pymystem3
+
 \# pip install flask
+
 \# pip install flask_cors
 
 The Rust program text is contained in the **src/main.rs** file.
