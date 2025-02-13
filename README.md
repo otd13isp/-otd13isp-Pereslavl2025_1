@@ -82,7 +82,7 @@ Download text lemmatization package:
 
 \# pip install pymystem3
 
-Download Flask package:
+Download Flask packages:
 
 \# pip install flask
 
